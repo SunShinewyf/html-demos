@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用css实现二级下拉菜单</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+         .nav{ width: 400px;height: 40px;margin: 0 auto;}
+         ul{list-style: none;}
+         .menu{width: 100px; line-height: 40px;text-align: center;border-left: 1px solid #ccc; background: #9e35a8; float:left; display: inline;position: relative;}
+         .drop{ width: 100px; height: 160px; display: none;position: absolute;left:-41px;}
+         .drop li{width: 100px; height: 40px;display: block;border-top:1px solid #ccc; line-height: 40px;text-align: center; background: #9e35a8;}
+         li a{text-decoration: none;color:#fff;}
+         .menu:hover .drop{display: block;}  /* //这句是关键，精髓之处啊*/
+
+
+	</style>
+</head>
+<body>
+    <nav>
+    	<ul>
+    		<li  class="menu">
+    			<a href="">一级菜单</a>
+    			<ul class="drop">
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+    			</ul>
+    		</li>
+    	    <li  class="menu">
+    	    	<a href="">一级菜单</a>
+    	    	<ul class="drop">
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+    	    	</ul>
+    	    </li>
+    	    <li  class="menu">
+    	    	<a href="">一级菜单</a>
+    	    	<ul class="drop">
+    	    	   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+    	    	</ul>
+    	    </li>
+    	    <li  class="menu">
+    	    	<a href="">一级菜单</a>
+    	    	<ul class="drop">
+    	    	   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+                   <li><a href="">二级菜单</li>
+    	    	</ul>
+    	    </li>
+    	</ul>
+    </nav>
+</body>
+</html>
