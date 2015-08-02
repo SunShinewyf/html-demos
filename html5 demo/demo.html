@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	  <html>
+			<head>
+				  <title>canvas 绘图demo</title>
+				  <meta charset="utf-8"/>
+				  <style>
+			
+				  </style>
+			</head>
+			<body>
+				<div class="outer">
+				  <canvas id="canvas" width="400" height="400">
+						your browser doesnot not support the canvas,please try another browser
+				  </canvas>
+				</div>
+			</body>
+			<script>
+				  var canvas = document.getElementById('canvas');
+				  var cxt = canvas.getContext('2d');
+				  var z = 10;
+				  var direction = 0;
+				  var gradient = cxt.createRadialGradient(200,200,10,300,300,300);
+				  function funGradient(){
+						if (z==0) {
+							  direction = 1;
+						}
+						if (z==300) {
+							  direction = 0;
+						}
+						if (direction == 1) {
+							  z+=10;
+						}
+						if (direction == 0) {
+							  z-=10;
+						}
+	
+						gradient = cxt.createRadialGradient(200,200,10,z,z,300);
+						gradient.addColorStop('0','red');
+						gradient.addColorStop('1.0','purple');
+						cxt.fillStyle = gradient;
+						cxt.fillRect(0,0,400,400);
+				  }
+				  
+				  setInterval(funGradient,100);
+				  
+				  
+				  
+			    
+			</script>
+			
+	  </html>
