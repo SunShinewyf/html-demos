@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+	  <html>
+			<head>
+				  <title>canvas 绘图demo</title>
+				  <meta charset="utf-8"/>
+				  <style>
+						#canvas1{
+                            width:200px;height: 200px;border:1px solid red;
+						}
+						#canvas2{
+						    width:200px;height: 200px;border:1px solid blue;
+						}
+						#canvas3{
+							  width: 200px;height:200px;border:1px solid orange;
+						}
+						#canvas4{
+							  width:200px;height: 200px; border:1px solid purple;
+						}
+				  </style>
+			</head>
+			<body>
+				  <canvas id="canvas1">
+						your browser doesnot support the canvas,Try another browser!
+				  </canvas>
+				  <canvas id="canvas2">
+						your browser doesnot support the canvas,Try another browser!
+				  </canvas>
+				  <canvas id="canvas3">
+						your browser doesnot support the canvas,Try another browser!
+				  </canvas>
+				  <canvas id="canvas4">
+						your browser doesnot support the canvas,Try another browser!	
+				  </canvas>
+			</body>
+			<script>
+				  var canvas1 = document.getElementById('canvas1');
+				  var cxt1 = canvas1.getContext('2d');
+				  cxt1.lineWidth = 2;
+				  var canvas2 = document.getElementById('canvas2');
+				  var cxt2 = canvas2.getContext('2d');
+				  cxt2.lineWidth = 2;
+				  var canvas3  = document.getElementById('canvas3');
+				  var cxt3 = canvas3.getContext('2d');
+				  cxt3.lineWidth = 2;
+				  var canvas4 = document.getElementById('canvas4');
+				  var cxt4 = canvas4.getContext('2d');
+				  cxt4.lineWidth = 2;
+				  
+				  function animate(){
+				  for(var i=0;i<=200;i+=20){
+						for(var j=0;j<=200;j+=20){
+							  cxt1.beginPath();
+							  cxt2.beginPath();
+							  cxt3.beginPath();
+							  cxt4.beginPath();
+							  cxt1.arc(i,j,10,0,Math.PI*2,true);
+							  cxt2.arc(i,j,10,0,Math.PI,true);
+							  cxt3.moveTo(i,j);
+							  cxt3.lineTo(100,100);
+							  cxt4.moveTo(i,j);
+							  cxt4.lineTo(j,i);
+							  color1 = (Math.floor(Math.random()*255));
+							  color2 = (Math.floor(Math.random()*255));
+							  color3 = (Math.floor(Math.random()*255));
+							  cxt1.strokeStyle = 'rgb('+ color1+','+color2+','+color3+')';
+							  cxt2.strokeStyle = 'rgb('+ color1+','+color2+','+color3+')';
+							  cxt3.strokeStyle = 'rgb('+ color1+','+color2+','+color3+')';
+							  cxt4.strokeStyle = 'rgb('+ color1+','+color2+','+color3+')';
+							  cxt1.closePath();
+							  cxt2.closePath();
+							  cxt1.stroke();
+							  cxt2.stroke();
+							  cxt3.stroke();
+							  cxt4.stroke();
+						}
+				  }
+			}
+			setInterval(animate,100);
+			</script>
+			
+	  </html>
